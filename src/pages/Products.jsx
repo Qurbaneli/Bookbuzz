@@ -1,4 +1,5 @@
 import React,{useState,useEffect} from 'react'
+import { NavLink } from 'react-router-dom'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Product from '../components/Product'
@@ -41,14 +42,18 @@ useEffect(()=>{
             <div className="all-products">
               {
                 data.map((el)=>{
-                  return (<Product
+                  return (
+                    <NavLink to={`/product-detail/${el.id}`}>
+                  <Product
                     id={el.id} 
                     title={el.title}
                     desc={el.subtitleShort}
                     img={el.mainImage}
                     like={el.numOfLikes}
 
-                  />)
+                  />
+                  </NavLink>
+                  )
                   
                 })
               }

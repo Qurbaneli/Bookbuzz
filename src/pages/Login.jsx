@@ -23,9 +23,17 @@ function Login() {
     });
 
     result=await result.json();
-    let jwt=result.result['jwt']
+    if(result.isError)
+    {
+      alert("Please enter correct email and password")
+    }
+    else
+    {
+      let jwt=result.result['jwt']
     localStorage.setItem("login",jwt)
     navigate("/products");
+    }
+    
   }
   
   return (

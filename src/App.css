@@ -5,6 +5,8 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+
+
 #login{
     margin-top:100px;
 }
@@ -142,8 +144,9 @@ header nav ul li a{
     flex-wrap: wrap;
 }
 
-#products .product-item:last-child{
-    justify-self: left;
+#products a{
+text-decoration: none;
+color:#333;
 }
 
 #products .product-item{
@@ -153,6 +156,12 @@ header nav ul li a{
     background-color: #ccc;
     border-radius: 10px;
     margin-bottom:30px;
+    transition: 0.4s;
+}
+
+#products .product-item:hover img{
+    cursor: pointer;
+    transform: scale(1.2);
 }
 
 #products .product-item-header
@@ -169,6 +178,7 @@ header nav ul li a{
 }
 
 #products .product-item .product-img img{
+    transition: 0.4s;
     width:100%;
     
 }
@@ -187,6 +197,7 @@ header nav ul li a{
 #products .product-item .product-desc p
 {
     font-size: 12px;
+    height:30px;
 }
 
 #products .product-item-footer

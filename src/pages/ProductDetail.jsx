@@ -1,8 +1,36 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
+import {useParams } from 'react-router-dom'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 function ProductDetail() {
+    const params=useParams();
+    const bookId=params?.bookId;
+
+    const [detail,setDetail]=useState([]);
+
+useEffect(()=>{
+  let token=localStorage.getItem("login")
+
+  const fetchData = async () => {
+    let result= await fetch(`http://bookbuzz.cronhex.com/api/v1/product/details?productId=${bookId}`,{
+        method:"GET",
+        headers:{
+          "Content-Type":"application/json",
+          'Authorization': `Bearer ${token}`
+        }
+      });
+        result = await result.json();
+        console.log(result)
+        let detail=result.result
+        setDetail(detail)
+        console.log(detail.images)
+    }
+
+    fetchData();
+  
+},[])
+
   return (
     <div id="product-detail">
         <div className="container">
@@ -11,26 +39,25 @@ function ProductDetail() {
                 <div className="product-detail-content">
                     <div className="product-detail-images">
                         <div className="big-image">
-                            <img src="https://res.cloudinary.com/bloomsbury-atlas/image/upload/w_568,c_scale/jackets/9781526604279.jpg" alt="" />
+                            <img src={detail.mainImage} alt="" />
                         </div>
                         <div className="little-images">
-                            <div className="little-image">
-                                <img src="https://m.media-amazon.com/images/I/51FInNmoxSS.jpg" alt="" />
-                            </div>
-
-                            <div className="little-image">
-                                <img src="https://marketplace.canva.com/EAD7WuSVrt0/1/0/1003w/canva-colorful-illustration-young-adult-book-cover-LVthABb24ik.jpg" alt="" />
-                            </div>
-
-                            <div className="little-image">
-                                <img src="https://bukovero.com/wp-content/uploads/2016/07/Harry_Potter_and_the_Cursed_Child_Special_Rehearsal_Edition_Book_Cover.jpg" alt="" />
-                            </div>
+                             {/* {
+                                detail.images.map((el)=>{
+                                    return (
+                                        <div className="little-image">
+                                        <img src="https://m.media-amazon.com/images/I/51FInNmoxSS.jpg" alt="" />
+                                        </div>
+                                    )
+                                })
+                            } 
+         */}
                         </div>
                     </div>
 
                     <div className="product-detail-desc">
-                        <h2>The Wooden Table</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto a odit rerum pariatur doloribus accusamus dolor omnis tempore quos quia. Cupiditate vel iure consectetur necessitatibus impedit consequuntur odio voluptas eius?</p>
+                        <h2>{detail.title}</h2>
+                        <p>{detail.subtitleShort}</p>
                         
                         <div className="tags">
                             <div className='tag'>
