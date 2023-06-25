@@ -1,9 +1,13 @@
 import React,{useState} from 'react'
 import loginImage from "../assets/img/login.png"
+import {useNavigate} from "react-router-dom"
+
 
 function Login() {
+
   const [email,setEmail]=useState();
   const [password,setPassword]=useState()
+  const navigate = useNavigate();
 
   async function login(e){
     e.preventDefault();
@@ -21,7 +25,7 @@ function Login() {
     result=await result.json();
     let jwt=result.result['jwt']
     localStorage.setItem("login",jwt)
-
+    navigate("/products");
   }
   
   return (

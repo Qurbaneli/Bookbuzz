@@ -10,13 +10,14 @@ function Products() {
 
     const [data,setData]=useState([]);
 useEffect(()=>{
+  let token=localStorage.getItem("login")
 
   const fetchData = async () => {
     let result= await fetch("http://bookbuzz.cronhex.com/api/v1/product/explore",{
         method:"GET",
         headers:{
           "Content-Type":"application/json",
-          'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQm9iIiwiaWF0IjoxNjg3NjQzMjY2LCJleHAiOjE2ODc2NDM1NjZ9.eU4oBDjyfpahTpQ9fEyaK7yjs4BobgCifALTtB_yhbM'
+          'Authorization': `Bearer ${token}`
         }
       });
 
