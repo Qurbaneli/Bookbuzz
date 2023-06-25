@@ -1,0 +1,374 @@
+*{
+    box-sizing:border-box;
+    padding:0px;
+    margin:0px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#login{
+    margin-top:100px;
+}
+
+#login .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin:0px 150px;
+}
+
+#login .login-image{
+    width:60%;
+    text-align: center;
+}
+
+#login .login-image h1{
+    margin-bottom: 50px;
+}
+
+#login .login-form{
+    margin-top: 30px;
+    width:40%;
+    display: flex;
+}
+
+#login .login-form h2{
+    font-size:30px; 
+    margin-bottom:30px;
+    text-align: center;
+}
+
+#login .login-form input{
+    border:none;
+    box-shadow: 1px 2px 6px 0px rgba(88,88,88,0.4);
+-webkit-box-shadow: 1px 2px 6px 0px rgba(88,88,88,0.4);
+-moz-box-shadow: 1px 2px 6px 0px rgba(88,88,88,0.4);
+    padding:10px 10px;
+    width:300px;
+    display: block;
+    border-radius: 15px;
+    cursor: pointer;
+    outline: none;
+    margin-top:5px;
+    margin-bottom: 10px;
+    font-size: 10px;
+}
+
+#login .login-form label{
+    font-size:11px;
+    font-weight: bold;
+}
+
+#login .login-form button{
+    cursor: pointer;
+    margin-top: 20px;
+    width:100%;
+    background-color: #222;
+    padding:7px 10px;
+    color:#fff;
+    border-radius: 15px;
+
+}
+
+#login .login-form button:hover{
+    background-color: #000;
+}
+
+header
+{
+    padding:20px 0px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+}
+
+header .searchbar input
+{
+    border-radius: 10px;
+    width:500px;
+    border:1px solid #ccc;
+    padding:10px 10px;
+    outline: none;
+}
+
+header .right-navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav ul{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+header nav ul li{
+   margin:0px 10px;
+   
+}
+
+
+header nav ul li a{
+    text-decoration: none;
+    font-size: 16px;
+    color:#222;
+    font-weight:600;
+    transition: 0.4s;
+    padding:7px 15px;
+    border-radius: 10px;
+ }
+
+ header nav ul li a:hover{
+    background-color: #222;
+    color:#fff;
+  }
+ 
+
+#products .container{
+    margin:0px 200px;
+}
+
+#products .products-title{
+    margin:20px 0px 70px 0px; 
+}
+
+#products .products-title h2{
+   font-weight:700;
+}
+
+#products .all-products{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#products .product-item:last-child{
+    justify-self: left;
+}
+
+#products .product-item{
+    width:250px;
+    height:440px;
+    padding:10px;
+    background-color: #ccc;
+    border-radius: 10px;
+    margin-bottom:30px;
+}
+
+#products .product-item-header
+{
+    display: flex;
+    justify-content: flex-end;
+}
+
+#products .product-item .product-img {
+    width:100%;  
+    height: 260px;
+    border-radius: 10px;
+    overflow: hidden; 
+}
+
+#products .product-item .product-img img{
+    width:100%;
+    
+}
+
+#products .product-item .product-desc{
+    margin-top:20px;    
+}
+
+#products .product-item .product-desc h3
+{
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom:5px;
+}
+
+#products .product-item .product-desc p
+{
+    font-size: 12px;
+}
+
+#products .product-item-footer
+{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+#products .product-item-footer .item-likes
+{
+    background-color: #fff;
+    padding:5px 10px;
+    border-radius:40px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#products .load-more-row
+{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+#products .load-more {
+    background-color: #222;
+    padding:10px 30px;
+    font-size: 14px;
+    border-radius: 10px;
+    font-weight: 700;
+    color:#fff;
+    transition: 0.4s;
+}
+
+#products .load-more:hover{
+    cursor: pointer;
+    background-color: #000;
+}
+
+#product-detail .container{
+    margin:0px 200px;
+}
+
+.product-detail-content {
+    margin: 50px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-detail-content .product-detail-images{
+    width:50%;
+}
+
+.product-detail-content .product-detail-images .big-image{
+    border-radius: 10px;
+    width:400px;
+    height: 400px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.product-detail-content .product-detail-images .big-image img{
+ width:400px;
+}
+
+.product-detail-content .product-detail-images .little-images{
+    width:400px;
+    display: flex;
+    justify-content: space-between;
+   }
+
+.product-detail-content .product-detail-images .little-image{
+    border-radius: 10px;
+    width:120px;
+    height:100px;
+    overflow: hidden;
+   }
+
+
+
+#product-detail .product-detail-desc{
+    width:50%;
+}
+
+#product-detail .product-detail-desc h2{
+font-size: 30px;
+margin-bottom:15px;
+}
+
+#product-detail .product-detail-desc p{
+   font-size: 15px;
+   line-height:22px;
+   color:#666;
+   font-weight: 500;
+   margin-bottom: 30px;
+}
+
+#product-detail .product-detail-desc .tags{
+   display: flex;
+ }
+
+ #product-detail .product-detail-desc .tag{
+    border-radius: 10px;
+    padding:7px 20px;
+    font-size: 14px;
+    margin-right:7px;
+    background-color: #222;
+    font-weight: 500;
+    color:#fff;
+ }
+
+
+ #product-detail .product-detail-author{
+    margin-top: 30px;
+    display: flex;
+ }
+
+ #product-detail .product-detail-author >div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right:100px;
+ }
+
+
+
+ #product-detail .product-detail-author .product-author-detail-image{
+    width:30px;
+    height:30px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+  }
+
+  #product-detail .product-detail-author .product-author-detail-image img{
+    width:100%;
+  }
+
+ #product-detail .product-detail-author .product-author-title{
+   font-size: 14px;
+   font-weight: 700;
+ }
+
+
+footer{
+    margin-top:60px;
+    border-top:1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 0px 80px 0px;
+}
+
+footer .footer-logo{
+width:50%;
+font-size: 30px;
+font-weight: 800;
+}
+
+footer .footer-nav{
+    width:50%;
+display: flex;
+justify-content: space-between;
+}
+
+footer .footer-social h4{
+font-weight:700;
+}
+
+footer ul{
+ list-style: none;
+}
+
+footer ul li {
+    margin: 5px 0px;
+}
+
+footer ul li a{
+    text-decoration: none;
+    color:#222;
+    font-size: 14px;
+   }
+
+
